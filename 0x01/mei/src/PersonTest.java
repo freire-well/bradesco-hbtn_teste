@@ -28,7 +28,7 @@ public class PersonTest {
 
     @Test
     void person_is_MEI(){
-       p.setSalary(9000);
+       p.setSalary(8000);
        p.setPensioner(false);
        p.setAnotherCompanyOwner(false);
        p.setPublicServer(false);
@@ -41,6 +41,7 @@ public class PersonTest {
        p.setPensioner(true);
        p.setAnotherCompanyOwner(true);
        p.setPublicServer(true);
-       assertTrue(p.isMEI());
+
+       assertFalse(p.isMEI());
     }
 }
