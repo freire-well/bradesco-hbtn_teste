@@ -1,3 +1,6 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Person {
     String username;
     String password;
@@ -39,12 +42,20 @@ public class Person {
 
 
     boolean checkPassword() {
+
         if (password.length() < 8) {
             return false;
-        } else if (password.matches("^[A-Z]+[0-9]+$") || password.matches("^[a-zA-Z0-9]+$")) {
+        } else if (!runTest("[0-9]", password) || !runTest("[A-Z]", password) || !runTest("[^a-zA-Z0-9]", password)) {
             return false;
         }
         return true;
+    }
+
+    boolean runTest(String pattern, String matcher){
+        Pattern pat = Pattern.compile(pattern);
+        Matcher mat = pat.matcher(matcher);
+
+        return mat.find();
     }
 
 }
