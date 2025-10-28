@@ -33,7 +33,7 @@ public class Person {
         return password;
     }
 
-    boolean checkUser(){
+    boolean checkUser(String username){
         var pattern = "^[a-zA-z0-9]+$";
         if(username.length() < 8){
             return false;
@@ -41,7 +41,7 @@ public class Person {
     }
 
 
-    boolean checkPassword() {
+    boolean checkPassword(String password) {
 
         if (password.length() < 8) {
             return false;
