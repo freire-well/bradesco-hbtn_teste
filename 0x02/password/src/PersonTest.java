@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PersonTest {
     private static Person person;
     @BeforeAll
-    static void setUp(){
+    static void setup(){
         person = new Person();
     }
 
